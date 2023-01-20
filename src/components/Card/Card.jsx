@@ -15,8 +15,8 @@ const Card = ({ movie }) => {
 
 	const genreFinder = () => {
 		let genreArray = [];
-		for (let i = 0; i < movie.genre_ids.length; i++) {
-			switch (movie.genre_ids[i]) {
+			for(let movieGenreIds of movie.genre_ids) {
+			switch (movieGenreIds) {
 				case 28:
 					genreArray.push(`Action`);
 					break;
