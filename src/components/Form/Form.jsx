@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 
 const Form = () => {
 	const [moviesData, setMoviesData] = useState([]);
 	const [search, setSearch] = useState("code");
-	const [sortGoodBad, setSortGoodBad] = useState(null);
+	const [sortGoodBad, setSortGoodBad] = useState("");
 
 	useEffect(() => {
 		axios
@@ -48,15 +48,19 @@ const Form = () => {
 			<div className="result">
 				{moviesData
 					.slice(0, 12)
+					// @ts-ignore
 					.sort((a, b) => {
 						if (sortGoodBad === "goodToBad") {
+							// @ts-ignore
 							return b.vote_average - a.vote_average;
 						} else if (sortGoodBad === "badToGood") {
+							// @ts-ignore
 							return a.vote_average - b.vote_average;
 						}
 						return null;
 					})
 					.map((movie) => (
+						// @ts-ignore
 						<Card key={movie.id} movie={movie} />
 					))}
 			</div>
