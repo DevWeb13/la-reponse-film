@@ -10,10 +10,10 @@ const UserList = () => {
 			? window.localStorage.movies.split(",")
 			: [];
 
-		for (let i = 0; i < moviesId.length; i++) {
+			for(let movieId of moviesId) {
 			axios
 				.get(
-					`https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR`
+					`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR`
 				)
 				// @ts-ignore
 				.then((res) => setListData((listData) => [...listData, res.data]));
