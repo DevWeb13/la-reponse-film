@@ -121,8 +121,8 @@ const Card = ({ movie }) => {
 			<ul>
 				{movie.genre_ids
 					? genreFinder()
-					: movie.genres.map((genre, index) => (
-							<li key={index}>{genre.name}</li>
+					: movie.genres.map((genre) => (
+							<li key={Date.now() + genre.name}>{genre.name}</li>
 					  ))}
 			</ul>
 			{movie.overview && <h3>Synopsis</h3>}
