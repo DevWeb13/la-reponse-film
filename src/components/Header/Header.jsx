@@ -8,12 +8,12 @@ const Header = () => {
         <ul>
           <NavLink to="/"
           // @ts-ignore
-          className={(nav) => (nav.isActive ? "nav-active" : null)}>
+          className={navIsActive()}>
           <li>Accueil</li>
           </NavLink>
           <NavLink to="/coup-de-coeur"
           // @ts-ignore
-          className={(nav) => (nav.isActive ? "nav-active" : null)}>
+          className={navIsActive()}>
           <li>Coup de coeur</li>
           </NavLink>
         </ul>
@@ -24,3 +24,7 @@ const Header = () => {
 };
 
 export default Header;
+
+function navIsActive() {
+  return (nav) => (nav.isActive ? "nav-active" : null);
+}
