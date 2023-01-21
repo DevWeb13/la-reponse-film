@@ -13,18 +13,20 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		font-size: 1.3rem;
+		font-size: calc(1rem + 3vw);
 
 		ul {
 			display: flex;
+			align-items: center;
+			width: 100%;
+			justify-content: space-around;
 
 			a {
 				text-decoration: none;
 				color: $white;
 				border-radius: 10px;
-				width: 102px;
+				padding: 5px 10px;
 				text-align: center;
-				margin-right: 5px;
 
 				&:visited {
 					text-decoration: none;

@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import Hearth from "../Hearth/Hearth";
+import ReactModal from "react-modal";
+
+ReactModal.setAppElement("#root");
 
 /**
  * It returns a div with a poster, a title, a release date, a rating, a list of genres, a synopsis and
@@ -9,6 +12,7 @@ import Hearth from "../Hearth/Hearth";
  * @returns A div with a class of card.
  */
 const Card = ({ movie }) => {
+	const [modalIsOpen, setIsOpen] = useState(false);
 	const dateFormater = (date) => {
 		let [yy, mm, dd] = date.split("-");
 		return [dd, mm, yy].join("/");
@@ -82,8 +86,39 @@ const Card = ({ movie }) => {
 		return genreArray.map((genre) => <li key={genre}>{genre}</li>);
 	};
 
+	const closeModal = useCallback(() => {
+		setIsOpen(false);
+	}, [setIsOpen]);
+
 	return (
 		<div className="card">
+			<ReactModal
+				isOpen={modalIsOpen}
+				contentLabel="Modal"
+				onRequestClose={closeModal}
+				style={{
+					overlay: {
+						backgroundColor: "#546ee44b",
+						zIndex: "1000",
+					},
+					content: {
+						backgroundColor: "#212040",
+						color: "white",
+						borderRadius: "10px",
+						fontSize: "calc(1rem + 2vw)",
+					},
+				}}
+			>
+				<div className="modalContainer">
+					<p>{movie.overview}</p>
+					<button
+						type="button"
+						className="submit"
+						value="🔙 retour"
+						onClick={closeModal}
+					/>
+				</div>
+			</ReactModal>
 			<img
 				src={
 					movie.poster_path
@@ -106,7 +141,11 @@ const Card = ({ movie }) => {
 					? genreFinder()
 					: movie.genres.map((genre) => <li key={genre.name}>{genre.name}</li>)}
 			</ul>
-			{movie.overview && <h3>Synopsis</h3>}
+			{movie.overview && (
+				<button onClick={() => setIsOpen(true)}>
+					<h3>Synopsis</h3>
+				</button>
+			)}
 			<p>{movie.overview}</p>
 			<Hearth movieId={movie.id} />
 		</div>

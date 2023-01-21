@@ -72,11 +72,10 @@
 	h3 {
 		letter-spacing: 1px;
 		font-size: 1.4rem;
-		margin-top: 10px;
 	}
 	p {
 		color: $color-3;
-		font-size: 1.3rem;
+		font-size: calc(1rem + 1vw);
 		line-height: 20px;
 		height: 160px;
 		overflow-y: scroll;
