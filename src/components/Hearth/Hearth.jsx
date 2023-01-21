@@ -39,7 +39,6 @@ function addFavorites(e, isFavorite, movieId, setIsFavorite) {
 		: [];
 	if (isFavorite) {
 		moviesId.splice(moviesId.indexOf(movieId.toString()), 1);
-		console.log(movieId);
 	} else {
 		moviesId.push(movieId);
 	}
