@@ -6,13 +6,14 @@ const UserList = () => {
 	const [listData, setListData] = useState([]);
 
 	useEffect(() => {
-		let moviesId = window.localStorage.movies
-			? window.localStorage.movies.split(",")
+		let moviesId = window.localStorage.favorites
+			? window.localStorage.favorites.split(",")
 			: [];
 
-			for(let movieId of moviesId) {
+		for (let movieId of moviesId) {
 			axios
 				.get(
+					// @ts-ignore
 					`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR`
 				)
 				// @ts-ignore

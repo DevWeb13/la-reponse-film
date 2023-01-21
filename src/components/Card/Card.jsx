@@ -1,4 +1,5 @@
 import React from "react";
+import Hearth from "../Hearth/Hearth";
 
 /**
  * It returns a div with a poster, a title, a release date, a rating, a list of genres, a synopsis and
@@ -15,7 +16,7 @@ const Card = ({ movie }) => {
 
 	const genreFinder = () => {
 		let genreArray = [];
-			for(let movieGenreIds of movie.genre_ids) {
+		for (let movieGenreIds of movie.genre_ids) {
 			switch (movieGenreIds) {
 				case 28:
 					genreArray.push(`Action`);
@@ -81,24 +82,6 @@ const Card = ({ movie }) => {
 		return genreArray.map((genre) => <li key={genre}>{genre}</li>);
 	};
 
-	const addStorage = () => {
-		let storedData = window.localStorage.movies
-			? window.localStorage.movies.split(",")
-			: [];
-
-		if (!storedData.includes(movie.id.toString())) {
-			storedData.push(movie.id);
-			window.localStorage.movies = storedData;
-		}
-	};
-
-	const removeStorage = () => {
-		let storedData = window.localStorage.movies.split(",");
-
-		let newData = storedData.filter((id) => id !== movie.id.toString());
-		window.localStorage.movies = newData;
-	};
-
 	return (
 		<div className="card">
 			<img
@@ -121,28 +104,11 @@ const Card = ({ movie }) => {
 			<ul>
 				{movie.genre_ids
 					? genreFinder()
-					: movie.genres.map((genre) => (
-							<li key={genre.name}>{genre.name}</li>
-					  ))}
+					: movie.genres.map((genre) => <li key={genre.name}>{genre.name}</li>)}
 			</ul>
 			{movie.overview && <h3>Synopsis</h3>}
 			<p>{movie.overview}</p>
-
-			{movie.genre_ids ? (
-				<div className="btn" onClick={() => addStorage()}>
-					Ajouter aux coups de coeurs
-				</div>
-			) : (
-				<div
-					className="btn"
-					onClick={() => {
-						removeStorage();
-						window.location.reload();
-					}}
-				>
-					Supprimer de la liste
-				</div>
-			)}
+			<Hearth movieId={movie.id} />
 		</div>
 	);
 };

@@ -1,16 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
 import Card from "../Card/Card";
 
 const Form = () => {
 	const [moviesData, setMoviesData] = useState([]);
-	const [search, setSearch] = useState("code");
+	const [search, setSearch] = useState("");
 	const [sortGoodBad, setSortGoodBad] = useState("");
 
 	useEffect(() => {
+		if (search === "") return setMoviesData([]);
 		axios
 			.get(
-				`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${search}&language=fr-FR`
+				// @ts-ignore
+				`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${search}&language=fr-FR`
 			)
 			.then((res) => setMoviesData(res.data.results));
 	}, [search]);
