@@ -109,14 +109,14 @@ const Card = ({ movie }) => {
 					},
 				}}
 			>
+				<button
+					type="button"
+					className="closeModalButton"
+					value=" retour"
+					onClick={closeModal}
+				/>
 				<div className="modalContainer">
 					<p>{movie.overview}</p>
-					<button
-						type="button"
-						className="submit"
-						value="🔙 retour"
-						onClick={closeModal}
-					/>
 				</div>
 			</ReactModal>
 			<img
@@ -144,9 +144,10 @@ const Card = ({ movie }) => {
 			{movie.overview && (
 				<button onClick={() => setIsOpen(true)}>
 					<h3>Synopsis</h3>
+					<p>{movie.overview}</p>
 				</button>
 			)}
-			<p>{movie.overview}</p>
+
 			<Hearth movieId={movie.id} />
 		</div>
 	);

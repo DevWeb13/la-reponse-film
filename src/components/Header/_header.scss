@@ -2,6 +2,8 @@
 	display: flex;
 	width: 100%;
 	flex-direction: column;
+	height: calc(10rem + 10vw);
+	justify-content: center;
 
 	h1 {
 		display: block;
@@ -9,6 +11,7 @@
 		text-shadow: 2px 3px 0px $color-1;
 		text-align: center;
 		letter-spacing: 2px;
+		-webkit-text-stroke: 1px $color-1;
 	}
 	nav {
 		display: flex;
@@ -19,7 +22,8 @@
 			display: flex;
 			align-items: center;
 			width: 100%;
-			justify-content: space-around;
+			justify-content: center;
+			gap: calc(1rem + 1vw);
 
 			a {
 				text-decoration: none;
@@ -30,14 +34,16 @@
 
 				&:visited {
 					text-decoration: none;
-					color: $white;
+					color: $color-1;
 				}
 				&:hover {
 					background: $black;
+					color: $white;
 				}
 			}
 			a.nav-active {
 				background: $color-1;
+				color: $white;
 
 				&:hover {
 					background: $black;

@@ -3,18 +3,18 @@
 		text-align: center;
 	}
 	form {
-		width: 300px;
+		width: 100%;
 		margin: 0 auto;
 
 		input[type="text"] {
 			padding: 1px 10px;
 			border-radius: 10px;
 			border: none;
-			font-size: 1.5rem;
+			font-size: calc(1rem + 1vw);
 			display: block;
 			margin: 0 auto;
 			width: 220px;
-			outline: none;
+			outline: $color-1 solid 2px;
 			text-align: center;
 		}
 		input[type="submit"] {
@@ -24,7 +24,7 @@
 			border: none;
 			background: $color-1;
 			color: $white;
-			font-size: 1.5rem;
+			font-size: calc(1rem + 1vw);
 			cursor: pointer;
 			z-index: 10;
 			position: relative;
@@ -40,7 +40,7 @@
 		display: flex;
 		justify-content: space-around;
 		cursor: pointer;
-
+		font-size: calc(1rem + 0.5vw);
 		#goodToBad {
 			border-radius: 10px 0 0 10px;
 			border-right: 1px solid $color-2;

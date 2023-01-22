@@ -21,6 +21,7 @@ const UserList = () => {
 		}
 	}, []);
 
+	console.log({ listData });
 	return (
 		<div className="user-list-page">
 			<h2>

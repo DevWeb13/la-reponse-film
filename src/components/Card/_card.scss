@@ -85,3 +85,19 @@
 		}
 	}
 }
+
+/* *********** MODAL *********** */
+.closeModalButton {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+
+	&::after {
+		content: "🔙";
+		// position: absolute;
+		display: flex;
+
+		font-size: calc(1rem + 2vw);
+	}
+}
