@@ -69,7 +69,7 @@ Javascript, React, Sass...
 
 ## Documentation
 
-[Documentation](/docs/index.html)
+[Documentation](https://devweb13.github.io/la-reponse-film/)
 
 ## Acknowledgements
 
