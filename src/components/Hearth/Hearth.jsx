@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
+import addFavorites from "../../functions/addFavorites";
 
+/**
+ * @param {object} props
+ * @param {number} props.movieId
+ * @returns  {JSX.Element}
+ */
 const Hearth = ({ movieId }) => {
 	const [isFavorite, setIsFavorite] = useState(false);
 
@@ -32,16 +38,3 @@ const Hearth = ({ movieId }) => {
 };
 
 export default Hearth;
-function addFavorites(e, isFavorite, movieId, setIsFavorite) {
-	e.preventDefault();
-	let moviesId = window.localStorage.favorites
-		? window.localStorage.favorites.split(",")
-		: [];
-	if (isFavorite) {
-		moviesId.splice(moviesId.indexOf(movieId.toString()), 1);
-	} else {
-		moviesId.push(movieId);
-	}
-	window.localStorage.favorites = moviesId;
-	setIsFavorite(!isFavorite);
-}
