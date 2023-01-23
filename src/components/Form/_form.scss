@@ -10,10 +10,10 @@
 			padding: 1px 10px;
 			border-radius: 10px;
 			border: none;
-			font-size: calc(1rem + 1vw);
+			font-size: calc(1rem + 0.5vw);
 			display: block;
 			margin: 0 auto;
-			width: 220px;
+			width: calc(13rem + 1vw);
 			outline: $color-1 solid 2px;
 			text-align: center;
 		}
@@ -36,7 +36,7 @@
 	}
 	.btn-sort-container {
 		margin: 8px auto;
-		width: 220px;
+		width: calc(13rem + 1vw);
 		display: flex;
 		justify-content: space-around;
 		cursor: pointer;
@@ -52,7 +52,7 @@
 		#goodToBad,
 		#badToGood {
 			background: $color-1;
-			width: 110px;
+			width: calc(6.5rem + 0.5vw);
 			transition: 0.3s;
 			position: relative;
 
