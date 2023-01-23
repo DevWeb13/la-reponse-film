@@ -67,12 +67,13 @@ Javascript, React, Sass...
 
 - [@DevWeb13](https://github.com/DevWeb13)
 
+## Documentation
+
+[Documentation](/docs/index.html)
 
 ## Acknowledgements
 
  - [https://www.youtube.com/@FromScratchDeveloppementWeb](https://www.youtube.com/@FromScratchDeveloppementWeb)
-
-
 
 # Getting Started with Create React App
 
