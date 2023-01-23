@@ -63,12 +63,6 @@ I am a self-taught developer specialized in React, Javascript, HTML, CSS/SASS, G
 ## 🛠 Skills
 Javascript, React, Sass...
 
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
 ## Authors
 
 - [@DevWeb13](https://github.com/DevWeb13)
